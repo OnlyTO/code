@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cc.code_container">
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 欢迎界面 -->
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 登录界面 -->
+        <activity android:name=".LoginActivity"></activity>
+
+        <!-- 注册界面 -->
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity">
+        </activity>
+
+        <!-- 主界面 -->
+        <activity android:name=".MainActivity"></activity>
+
+        <!-- 详情界面 -->
+        <activity
+            android:name=".DetailActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
+        <!-- 设置 -->
+        <activity android:name=".setting"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
+        <!-- 版本信息 -->
+        <activity android:name=".version"
+            android:parentActivityName=".MainActivity">
+        </activity>
+    </application>
+
+</manifest>
